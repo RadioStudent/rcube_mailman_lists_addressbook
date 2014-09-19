@@ -1,0 +1,21 @@
+Roundcube plugin mailman_lists_addressbook
+
+Exports mailman lists as Roundcube addressbook.
+
+Usage:
+
+Run lists2addrbook.php on every list change (addition, removal) or from cron.
+This takes a few seconds so it can't be done on every request so we create a cache file this way.
+
+Configuration:
+
+add mailman_lists_addressbook to the $config['plugins'] array.
+
+This plugin takes two configuration settings:
+
+$config['mailman_lists_addressbook'] = true;
+$config['mailman_lists_addressbook_cache'] = '/var/lib/mailman/data/roundcube_lists_addressbook.ser';
+
+The first one enables this plugin, the second one is the path to the cache file.
+
+Borut Mrak, 2014-09-19
